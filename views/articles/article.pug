@@ -1,0 +1,15 @@
+extends base
+
+block content
+    header.article-header
+        .columns.is-mobile
+            .column
+                a.subtitle(href="/author/"+article.author)
+                    span.subtitle= article.author
+            .column
+                .buttons.is-pulled-right
+                    a.button.is-dark.is-outlined(href="/article/edit/"+article._id) Edit
+                    span#delete-article.button.is-danger.is-outlined(data-id=article._id) Delete
+    .content
+        h1= article.title
+        p.has-text-justified= article.body

@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title Article Express
+        link(rel="shortcut icon", href="/favicon.png", type="image/png")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css")
+        link(rel="stylesheet", href="/css/app.css")
+        script(src="https://unpkg.com/ionicons@4.4.2/dist/ionicons.js")
+    body
+        section.hero.is-background.is-fullheight
+            .hero-body
+                .container
+                    .column.is-4.is-offset-4
+                        figure.has-text-centered
+                            img(src="/images/article-express.png", alt="ArticleExpress", srcset="/images/article-express.png")
+                        header.auth-header
+                            span.subtitle= header
+                        != messages("utils/message", locals)
+                        if errors
+                            each error, i in errors
+                                .notification.is-danger= error.msg
+                                    button.delete
+                        block content                            
+        
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(src="/js/app.js")

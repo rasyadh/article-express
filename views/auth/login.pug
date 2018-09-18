@@ -1,0 +1,16 @@
+extends base
+
+block content
+    form(action="/auth/login", method="post")
+        .field
+            label.label Username
+            .control
+                input.input(type="text", name="username", autocomplete="off", autofocus)
+        .field
+            label.label Password
+            .control
+                input.input(type="password", name="password", autocomplete="off")
+        button.button.is-dark.is-fullwidth(type="submit") Login
+    br
+    p.has-text-centered.has-text-grey Don't have any account? 
+        a.has-text-grey(href="/auth/register") Register

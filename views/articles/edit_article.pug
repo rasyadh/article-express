@@ -1,0 +1,19 @@
+extends base
+
+block content
+    header.articles-header
+        span.title= header
+    form(action="/article/edit/"+article._id, method="post")
+        .field
+            label.label Title
+            .control
+                input.input(type="text", name="title", autocomplete="off", value=article.title, autofocus)
+        .field
+            label.label Author
+            .control
+                input.input(type="text", name="author", autocomplete="off", value=article.author)
+        .field
+            label.label Body
+            .control
+                textarea.textarea(name="body")= article.body
+        button.button.is-dark.is-fullwidth(type="submit") Update Article

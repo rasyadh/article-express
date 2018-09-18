@@ -1,0 +1,28 @@
+extends base
+
+block content
+    form(action="/auth/register", method="post")
+        .field
+            label.label Name
+            .control
+                input.input(type="text", name="name", autocomplete="off", autofocus)
+        .field
+            label.label Email
+            .control
+                input.input(type="email", name="email", autocomplete="off")
+        .field
+            label.label Username
+            .control
+                input.input(type="text", name="username", autocomplete="off")
+        .field
+            label.label Password
+            .control
+                input.input(type="password", name="password", autocomplete="off")
+        .field
+            label.label Confirm Password
+            .control
+                input.input(type="password", name="confirmPassword", autocomplete="off")
+        button.button.is-dark.is-fullwidth(type="submit") Register
+    br
+    p.has-text-centered.has-text-grey Already have account? 
+        a.has-text-grey(href="/auth/login") Login

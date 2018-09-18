@@ -1,0 +1,59 @@
+a.navbar-item:hover {
+    color: #2f2f2f;
+}
+
+input:focus, textarea:focus {
+    border-color: #2f2f2f !important;
+    box-shadow: 0 0 0 0.125em rgba(47,47,47,.25) !important;
+}
+
+.articles-header {
+    border-bottom: 2px solid #f5f5f5 !important;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.articles-header span.title {
+    border-bottom: 2px solid #2f2f2f !important;
+    padding-bottom: 1.35rem;
+}
+
+.article-header {
+    border-bottom: 2px solid #f5f5f5 !important;
+    padding-bottom: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.article-header span.subtitle {
+    border-bottom: 2px solid #2f2f2f !important;
+    padding-bottom: 1.65rem;
+}
+
+.auth-header {
+    border-bottom: 2px solid #f5f5f5 !important;
+    padding-bottom: 1rem;
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+.auth-header span.subtitle {
+    border-bottom: 2px solid #2f2f2f !important;
+    padding-bottom: 1.15rem;
+}
+
+.media+.media {
+    border-top: none;
+    margin-top: 1.5rem;
+}
+
+.body-summarize {
+    overflow: hidden !important;
+    max-height: 100% !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical;
+}
+
+.messages {
+    margin-bottom: 2rem;
+}

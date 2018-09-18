@@ -1,0 +1,18 @@
+extends base
+
+block content
+    header.articles-header
+        span.title= header
+    if articles.length != 0
+        each article, i in articles
+            article.media
+                .media-content
+                    .content
+                        a.subtitle.is-4(href="/article/"+article._id)
+                            strong= article.title
+                        a.subtitle(href="/article/"+article._id)
+                            .has-text-justified.body-summarize= article.body
+                    a.subtitle.is-6(href="/author/"+article.author)
+                        small= article.author
+    else
+        p.subtitle.has-text-centered There is no article yet.
