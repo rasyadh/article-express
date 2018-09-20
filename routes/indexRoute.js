@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Article = require('../models/Article');
+const User = require('../models/User');
 
 router.get('*', (req, res, next) => {
     res.locals.user = req.user || null;

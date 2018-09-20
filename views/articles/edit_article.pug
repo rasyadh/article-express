@@ -9,10 +9,6 @@ block content
             .control
                 input.input(type="text", name="title", autocomplete="off", value=article.title, autofocus)
         .field
-            label.label Author
-            .control
-                input.input(type="text", name="author", autocomplete="off", value=article.author)
-        .field
             label.label Body
             .control
                 textarea.textarea(name="body")= article.body

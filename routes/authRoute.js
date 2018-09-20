@@ -9,7 +9,7 @@ const passport = require('passport');
  * @method      GET
  * @description Show register form
  */
-router.get('/register', (req, res) => {
+router.get('/register', ensureAuthenticated, (req, res) => {
     res.render('auth/register', {
         header: 'Register'
     });
@@ -67,7 +67,7 @@ router.post('/register', (req, res) => {
  * @method      GET
  * @description Show login form
  */
-router.get('/login', (req, res) => {
+router.get('/login', ensureAuthenticated, (req, res) => {
     res.render('auth/login', {
         header: 'Login'
     });
@@ -96,5 +96,15 @@ router.get('/logout', (req, res) => {
     req.flash('success', 'You are logged out');
     res.redirect('/auth/login');
 });
+
+// Access Control
+function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        res.redirect('/');
+    }
+    else {
+        return next();
+    }
+}
 
 module.exports = router;
