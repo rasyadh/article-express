@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
 const expressValidator = require('express-validator');
+const passport = require('passport');
 
 // Init Express
 const app = express();
@@ -16,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
-const db = require('./config/keys').MONGO_URI;
+const db = require('./config/database').MONGO_URI;
 
 // Connect to MongoDB
 mongoose
@@ -47,6 +48,12 @@ app.use((req, res, next) => {
 
 // Express Validator Middleware
 app.use(expressValidator());
+
+// Passport Config
+require('./config/passport')(passport);
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Import Routing
 const indexRoute = require('./routes/indexRoute');

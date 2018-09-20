@@ -18,23 +18,31 @@ html
                     a.navbar-item.is-hidden-desktop(href="/search")
                         span.icon
                             ion-icon(name="search", size="large")
-                    a.navbar-item.is-hidden-desktop(href="/article/add")
-                        span.icon
-                            ion-icon(name="create", size="large")
-                    a.navbar-item.is-hidden-desktop(href="/auth/login") Login
-                    a.navbar-item.is-hidden-desktop(href="/auth/register")
-                        button.button.is-dark.is-outlined Register
+                    if user
+                        a.navbar-item.is-hidden-desktop(href="/article/add")
+                            span.icon
+                                ion-icon(name="create", size="large")
+                        a.navbar-item.is-hidden-desktop(href="/auth/logout") 
+                            button.button.is-dark.is-outlined Logout
+                    else
+                        a.navbar-item.is-hidden-desktop(href="/auth/login") Login
+                        a.navbar-item.is-hidden-desktop(href="/auth/register")
+                            button.button.is-dark.is-outlined Register
                 #navbarMenu.navbar-menu
                     .navbar-end
                         a.navbar-item.is-hidden-mobile(href="/search")
                             span.icon
                                 ion-icon(name="search", size="large")
-                        a.navbar-item.is-hidden-mobile(href="/article/add")
-                            span.icon
-                                ion-icon(name="create", size="large")
-                        a.navbar-item.is-hidden-mobile(href="/auth/login") Login
-                        a.navbar-item.is-hidden-mobile(href="/auth/register")
-                            button.button.is-dark.is-outlined Register
+                        if user
+                            a.navbar-item.is-hidden-mobile(href="/article/add")
+                                span.icon
+                                    ion-icon(name="create", size="large")
+                            a.navbar-item.is-hidden-mobile(href="/auth/logout") 
+                                button.button.is-dark.is-outlined Logout
+                        else
+                            a.navbar-item.is-hidden-mobile(href="/auth/login") Login
+                            a.navbar-item.is-hidden-mobile(href="/auth/register")
+                                button.button.is-dark.is-outlined Register
 
         section.section
             .container

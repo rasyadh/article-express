@@ -57,3 +57,13 @@ input:focus, textarea:focus {
 .messages {
     margin-bottom: 2rem;
 }
+
+.notification.is-error {
+    color: #fff;
+    background-color: #ff3860;
+}
+
+.notification.is-success_msg {
+    color: #fff;
+    background-color: #23d160;
+}

@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Article = require('../models/Article');
 
+router.get('*', (req, res, next) => {
+    res.locals.user = req.user || null;
+    next();
+});
+
 /**
  * @route       /
  * @method      GET
