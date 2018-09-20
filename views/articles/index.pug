@@ -12,7 +12,7 @@ block content
                             strong= article.title
                         a.subtitle(href="/article/"+article._id)
                             .has-text-justified.body-summarize= article.body
-                    a.subtitle.is-6(href="/author/"+article.author)
-                        small= article.author
+                    a.subtitle.is-6(href="/author/"+article.author._id)
+                        small= article.author.name
     else
         p.subtitle.has-text-centered There is no article yet.

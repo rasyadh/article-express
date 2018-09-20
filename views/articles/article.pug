@@ -4,8 +4,8 @@ block content
     header.article-header
         .columns.is-mobile
             .column
-                a.subtitle(href="/author/"+author)
-                    span.subtitle= author
+                a.subtitle(href="/author/"+article.author._id)
+                    span.subtitle= article.author.name
             .column
                 .buttons.is-pulled-right
                     a.button.is-dark.is-outlined(href="/article/edit/"+article._id) Edit

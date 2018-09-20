@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Article = require('../models/Article');
+const Article = require('../models/Articles');
 const User = require('../models/User');
 
 /**
@@ -116,14 +116,8 @@ router.delete('/delete/:id', (req, res) => {
  */
 router.get('/:id', (req, res) => {
     Article.findById(req.params.id)
-        .then(article => {
-            User.findById(article.author)
-                .then(user => res.render('articles/article', {
-                    article,
-                    author: user.name
-                }))
-                .catch(err => console.err(err));
-        })
+        .populate({ path: 'author', select: 'name' })
+        .then(article => res.render('articles/article', { article }))
         .catch(err => console.error(err));
 });
 
