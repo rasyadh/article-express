@@ -22,6 +22,7 @@ html
                         a.navbar-item.is-hidden-desktop(href="/article/add")
                             span.icon
                                 ion-icon(name="create", size="large")
+                        a.navbar-item.is-hidden-desktop= user.username
                         a.navbar-item.is-hidden-desktop(href="/auth/logout") 
                             button.button.is-dark.is-outlined Logout
                     else
@@ -37,6 +38,7 @@ html
                             a.navbar-item.is-hidden-mobile(href="/article/add")
                                 span.icon
                                     ion-icon(name="create", size="large")
+                            a.navbar-item.is-hidden-mobile= user.username
                             a.navbar-item.is-hidden-mobile(href="/auth/logout") 
                                 button.button.is-dark.is-outlined Logout
                         else
